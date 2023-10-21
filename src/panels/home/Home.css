@@ -1,0 +1,33 @@
+.container {
+    border-radius: 4px;
+    padding: 8px;
+    display: block;
+}
+
+.display {
+    font-size: medium;
+    margin: 8px auto;
+}
+
+.outputDisplay {
+    margin: 8px 8px;
+}
+
+.outputDisplayWrapper {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding-right: 4px;
+}
+
+.outputDisplayLabel {
+    color: lightgrey;
+    font-size: 12px;
+    margin-right: 2px;
+}
+
+.outputDisplayValue {
+    color: white;
+    font-size: 12px;
+}
