@@ -1,11 +1,14 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, PropsWithChildren } from "react";
 
-export const WC = (props) => {
+// default Adobe component for event listening - minor typing but any and ignore errors here to avoid changing the component
+export const WC: React.FC<PropsWithChildren> = (props) => {
     const elRef = useRef(null);
 
-    const handleEvent = (evt) => {
+    const handleEvent = (evt: any) => {
         const propName = `on${evt.type[0].toUpperCase()}${evt.type.substr(1)}`;
+        // @ts-expect-error
         if (props[propName]) {
+            // @ts-expect-error
             props[propName].call(evt.target, evt);
         }
     }

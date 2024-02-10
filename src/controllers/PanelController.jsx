@@ -34,7 +34,8 @@ export class PanelController {
         this[_root].style.overflow = "auto";
         this[_root].style.padding = "8px";
 
-        ReactDOM.render(this[_Component]({panel: this}), this[_root]);
+        const root = ReactDOM.createRoot(this[_root]);
+        root.render(this[_Component]({panel: this}));
 
         return this[_root];
     }
