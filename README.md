@@ -1,6 +1,8 @@
-# Introduction
+# Colour Converter
 
-This plugin is a good place to get started when building a UXP plugin using React. It comes defined with all the dependencies that you'll need to get started. As this is a React project, you'll need to do some initial configuration before this will be usable in InDesign.
+## Introduction
+
+This plugin assists in colour conversion between HEX/RGB and CMYK values.
 
 ## Documentation
 
