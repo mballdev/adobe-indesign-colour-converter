@@ -4,37 +4,37 @@
  * @returns {{ cyan: number; magenta: number; yellow: number; black: number; }} cmyk value represented as an object
  */
 export const convertRGBToCMYK = ({ red, green, blue }: { red: number; green: number; blue: number; }) => {
-  // remove spaces from input RGB values, convert to int
-  const r = parseInt(`${ red }`.replace(/\s/g, ''), 10);
-  const g = parseInt(`${ green }`.replace(/\s/g, ''), 10);
-  const b = parseInt(`${ blue }`.replace(/\s/g, ''), 10);
+  let computedC = 0;
+  let computedM = 0;
+  let computedY = 0;
+  let computedK = 0;
 
-  // black
-  if (r === 0 && g === 0 && b === 0) {
+  // Remove the white from the color
+  let r1 = red / 255;
+  let g1 = green / 255;
+  let b1 = blue / 255;
+  let maxColor = Math.max(r1, g1, b1);
+
+  if (maxColor == 0) {
+    computedK = 1;
     return {
-      cyan: 0,
-      magenta: 0,
-      yellow: 0,
-      black: 1,
+      cyan: 0, 
+      magenta: 0, 
+      yellow: 0, 
+      black: 100
     };
+  } else {
+    computedC = 1 - (r1 / maxColor);
+    computedM = 1 - (g1 / maxColor);
+    computedY = 1 - (b1 / maxColor);
+    computedK = 1 - maxColor;
   }
-  
-  let computedC = 1 - (r / 255);
-  let computedM = 1 - (g / 255);
-  let computedY = 1 - (b / 255);
-
-  const minCMY = Math.min(computedC, Math.min(computedM, computedY));
-
-  const c = computedC === 1 ? 0 : (((computedC - minCMY) / (1 - minCMY)) * 100).toFixed(0);
-  const m = computedM === 1 ? 0 : (((computedM - minCMY) / (1 - minCMY)) * 100).toFixed(0);
-  const y = computedY === 1 ? 0 : (((computedY - minCMY) / (1 - minCMY)) * 100).toFixed(0);
-  const k = (minCMY * 100).toFixed(0);
 
   return {
-    cyan: c,
-    magenta: m,
-    yellow: y,
-    black: k,
+    cyan: +(computedC * 100).toFixed(4),
+    magenta: +(computedM * 100).toFixed(4),
+    yellow: +(computedY * 100).toFixed(4),
+    black: +(computedK * 100).toFixed(4),
   };
 }
 
