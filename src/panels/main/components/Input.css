@@ -35,6 +35,6 @@ input:focus, textarea:focus, select:focus{
 .copyButton {
   height: 20px;
   width: 20px;
-  background-color: transparent;
+  background-color: white;
   align-self: flex-end;
 }

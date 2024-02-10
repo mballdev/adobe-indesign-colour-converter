@@ -13,7 +13,7 @@
   "entrypoints": [
     {
       "type": "panel",
-      "id": "home",
+      "id": "main",
       "label": {
         "default": "Color Converter"
       },

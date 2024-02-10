@@ -1,5 +1,4 @@
 const path = require("path");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
@@ -33,7 +32,7 @@ module.exports = {
                 }
             },
             {
-                test: /\.png$/,
+                test: /\.(png|svg)$/,
                 exclude: /node_modules/,
                 loader: 'file-loader'
             },

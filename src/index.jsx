@@ -1,12 +1,12 @@
 import React from "react";
 
-import { PanelController } from "./controllers/PanelController.jsx";
-import { Home } from "./panels/home/Home.jsx";
+import { PanelController } from "./controllers/PanelController";
+import MainPanel from "./panels/main/MainPanel";
 
 import { entrypoints } from "uxp";
 
-const homeController = new PanelController(() => <Home />, {
-    id: "home"
+const mainController = new PanelController(() => <MainPanel />, {
+    id: "main"
 });
 
 
@@ -20,6 +20,6 @@ entrypoints.setup({
         }
     },
     panels: {
-        home: homeController
+        main: mainController
     }
 });

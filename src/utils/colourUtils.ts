@@ -119,8 +119,8 @@ export const convertCMYKtoRGB = (c: number, m: number, y: number, k: number, nor
   }
     
   return {
-    r: r,
-    g: g,
-    b: b
+    red: r,
+    green: g,
+    blue: b
   }
 }
