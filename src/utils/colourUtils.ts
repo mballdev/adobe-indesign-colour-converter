@@ -66,7 +66,7 @@ const componentFromStr = (numStr: string, percent: string) => {
 }
 
 /**
- * 
+ * Takes in an RGB string and returns a hex code
  * @param rgb RGB string in the format of 'rgb(0, 0, 0)'
  * @returns { string } Hex code as a string
  */
@@ -90,13 +90,13 @@ export const convertRGBtoHex = (rgb: string) => {
 }
 
 /**
- * 
+ * Takes in CMYK values and returns an RGB object
  * @param c Cyan
  * @param m Magenta
  * @param y Yellow
  * @param k Black
  * @param normalized 
- * @returns RGB as string?
+ * @returns RGB value represented as an object with red, green, and blue
  */
 export const convertCMYKtoRGB = (c: number, m: number, y: number, k: number, normalized: boolean) => {
   c = (c / 100);
